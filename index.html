@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myapp">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/libs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libs/css/bootstrap-theme.min.css">
+    <script src="assets/libs/scripts/jquery-3.2.0.js"></script>
+    <script src="assets/libs/scripts/jquery-ui.js"></script>
+    <script src="assets/libs/scripts/angular.js"></script>
+    <script src="assets/libs/scripts/angular-route.js"></script>
+    <script src="assets/libs/scripts/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+
+    <style>
+        /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+        }
+
+        /* Remove the jumbotron's default bottom margin */
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+        a:hover {
+            background-color: yellow;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-controller = 'mainCtrl'>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>Africanaire</h1>
+        <p>Mission, Vission & Values</p>
+    </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Logo</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#/">Home</a></li>
+                <li><a href="#/products">Products</a></li>
+                <li><a href="#/deals">Deals</a></li>
+                <li><a href="#/stores">Stores</a></li>
+                <li><a href="#/contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div ng-mouseover="count = count + 1" ng-init="count=0">Mouse over me!</div>
+<form>
+Start Date: <input type="text" name="stDate" ng-model="startdate"><br/>
+End Date: <input type="text" name="enDate" ng-model="enddate"><br/>
+<button ng-click="checkDate()" type="button">Click Me!</button>
+</form>
+<h1>{{count}}</h1>
+<div ng-view></div>
+
+<footer class="container-fluid text-center">
+    <p>Online Store Copyright</p>
+    <form class="form-inline">Get deals:
+        <input type="email" class="form-control" size="50" placeholder="Email Address">
+        <button type="button" class="btn btn-danger">Sign Up</button>
+    </form>
+</footer>
+
+</body>
+</html>
